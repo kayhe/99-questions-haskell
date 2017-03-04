@@ -1,3 +1,5 @@
+module Arithmetic.P31_41 where
+
 isPrime :: Int -> Bool
 isPrime 1 = True
 isPrime 2 = True

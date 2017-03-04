@@ -1,3 +1,5 @@
+module Lists.P1_10 where
+
 myLast :: [a] -> a
 myLast [x] = x
 myLast (x:xs) = myLast xs
@@ -10,7 +12,7 @@ myButLast (x:xs) = myButLast xs
 myButLast [] = error "Empty list!"
 
 elementAt :: [a] -> Int -> a
-elementAt (x:xs) 0 = x
+elementAt (x:xs) 1 = x
 elementAt (x:xs) n = elementAt xs (n-1)
 
 myLength :: [a] -> Int

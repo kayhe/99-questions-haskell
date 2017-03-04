@@ -1,3 +1,5 @@
+module Lists.P11_20 where
+
 dupli :: [a] -> [a]
 dupli [x] = [x,x]
 dupli (x:xs) = dupli [x] ++ dupli xs
@@ -16,6 +18,13 @@ slice :: [a] -> Int -> Int -> [a]
 slice (x:xs) 1 1 = [x]
 slice (x:xs) 1 k = [x] ++ slice xs 1 (k-1)
 slice (x:xs) i k = slice xs (i-1) (k-1)
+
+rotate :: [a] -> Int -> [a]
+rotate x i
+        | i >= 0 = let splitted = splitAt i x
+                   in snd splitted ++ fst splitted
+        | i < 0 = let splitted = splitAt ((length x) + i) x
+                  in snd splitted ++ fst splitted
 
 removeAt :: Int -> [a] -> (a,[a])
 removeAt i x = (x !! (i-1), take (i-1) x ++ drop i x)
